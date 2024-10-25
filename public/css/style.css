@@ -10,11 +10,6 @@ body {
   scroll-behavior: smooth;
   height: 100vh;
   width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 #user-input-field {
@@ -102,12 +97,6 @@ body {
   color: grey;
 }
 
-#content {
-  width: 100vw;
-  position: relative;
-  margin: 0 auto;
-}
-
 #buttons {
   clear: both;
   padding: 0 0 0 0;
@@ -151,7 +140,7 @@ button:hover {
   background-position: center;
 }
 
-#video-wrapper div {
+#video-wrapper .video-container {
   width: 400px;
   margin: 0 auto;
   padding: 50px 0 0 0;
@@ -176,4 +165,70 @@ video {
   font-size: 16px;
   margin: 0 auto;
   /* Adjust font size as needed */
+}
+
+#input-container .input-box {
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+#status {
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    text-align: center;
+  }
+  #video-wrapper {
+    height: 700px;
+    border: 2px solid red;
+  }
+
+  #video-wrapper .video-container {
+    width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+  }
+
+  .bottom-container {
+    /* border: 2px solid black; */
+    background: #fff;
+    width: 100vw;
+  }
+
+  #input-container .input-box {
+    width: 80%;
+    height: 150px;
+    border: 1px solid #2c2c2c;
+    padding: 1rem;
+    font-size: 2rem;
+  }
+
+  #input-container .input-box::placeholder {
+    font-size: 2rem;
+  }
+
+  #buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #buttons button {
+    font-size: 40px;
+    width: 300px;
+    height: 80px;
+  }
 }

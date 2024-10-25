@@ -20,39 +20,40 @@
                 <video id="talk-video" width="360" height="360" autoplay></video>
             </div>
         </div>
-        <br />
 
-        <div id="input-container" style="text-align: left;">
-            <input type="text" id="user-input-field"
-                placeholder="I am a helpful assistant... may I answer a question for you?" style="font-size: 20px;">
+        <div class="bottom-container">
+            <div id="input-container" style="text-align: left;">
+                <input type="text" id="user-input-field"
+                    placeholder="I am a helpful assistant... may I answer a question for you?" class="input-box" />
 
-            <div style="display: flex; justify-content: center; margin: 3rem auto;">
-                <input type="checkbox" id="toggleDID" style="width: 20px; height: 20px;" />
-                <label for="toggleDID" style="padding-left: 0.5rem; font-size: 16px; font-weight: 600;">Link with
-                    D-ID</label>
+                <div style="display: flex; justify-content: center; margin: 3rem auto;">
+                    <input type="checkbox" id="toggleDID" style="width: 20px; height: 20px;" />
+                    <label for="toggleDID" style="padding-left: 0.5rem; font-size: 16px; font-weight: 600;">Link with
+                        D-ID</label>
+                </div>
             </div>
-        </div>
 
-        <!-- added div#buttons -->
-        <div id="buttons">
-            <!-- index.html -->
-            <button id="connect-button" type="button">Connect</button>
-            <button id="voice-typing-button" type="button">Voice Typing</button>
-            <button id="talk-button" type="button">Let's Chat</button>
-            <button id="destroy-button" type="button">End Chat</button>
-        </div>
+            <!-- added div#buttons -->
+            <div id="buttons">
+                <!-- index.html -->
+                <button id="connect-button" type="button">Connect</button>
+                <button id="voice-typing-button" type="button">Voice Typing</button>
+                <button id="talk-button" type="button">Let's Chat</button>
+                <button id="destroy-button" type="button">End Chat</button>
+            </div>
 
-        <!-- ... other HTML ... -->
-        <div id="response-container">Server response will appear here for reference</div>
-        <!-- ... other HTML ... -->
+            <!-- ... other HTML ... -->
+            <div id="response-container">Server response will appear here for reference</div>
+            <!-- ... other HTML ... -->
 
-        <!-- added div#status -->
-        <div id="status">
-            ICE gathering status: <span id="ice-gathering-status-label">Not connected</span><br />
-            ICE status: <span id="ice-status-label">Not connected</span><br />
-            Peer connection status: <span id="peer-status-label">Not connected</span><br />
-            Signaling status: <span id="signaling-status-label">Not connected</span><br />
-            Streaming status: <span id="streaming-status-label">Not connected</span><br />
+            <!-- added div#status -->
+            <div id="status">
+                ICE gathering status: <span id="ice-gathering-status-label">Not connected</span><br />
+                ICE status: <span id="ice-status-label">Not connected</span><br />
+                Peer connection status: <span id="peer-status-label">Not connected</span><br />
+                Signaling status: <span id="signaling-status-label">Not connected</span><br />
+                Streaming status: <span id="streaming-status-label">Not connected</span><br />
+            </div>
         </div>
     </section>
 

@@ -64,22 +64,17 @@ connectButton.onclick = async () => {
     return;
   }
 
-  const sdpResponse = await fetch(
-    `${DID_API.url}/talks/streams/${streamId}/sdp`,
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Basic ${DID_API.key}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        answer: sessionClientAnswer,
-        session_id: sessionId,
-      }),
-    }
-  );
-  const dataSDP = await sdpResponse.json();
-  console.log("data SDP", dataSDP);
+  await fetch(`${DID_API.url}/talks/streams/${streamId}/sdp`, {
+    method: "POST",
+    headers: {
+      Authorization: `Basic ${DID_API.key}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      answer: sessionClientAnswer,
+      session_id: sessionId,
+    }),
+  });
 };
 
 // This is the event listener that checks the checkbox before proceeding
@@ -203,6 +198,7 @@ function onIceCandidate(event) {
     });
   }
 }
+
 function onIceConnectionStateChange() {
   iceStatusLabel.innerText = peerConnection.iceConnectionState;
   iceStatusLabel.className =
