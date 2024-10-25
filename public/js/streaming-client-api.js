@@ -153,7 +153,6 @@ async function handleDIDStreaming(chatResponse) {
 }
 
 // NOTHING BELOW THIS LINE IS CHANGED FROM ORIGNAL D-id File Example
-//
 
 const destroyButton = document.getElementById("destroy-button");
 destroyButton.onclick = async () => {
@@ -175,6 +174,7 @@ function onIceGatheringStateChange() {
   iceGatheringStatusLabel.className =
     "iceGatheringState-" + peerConnection.iceGatheringState;
 }
+
 function onIceCandidate(event) {
   console.log("onIceCandidate", event);
   if (event.candidate) {
@@ -354,10 +354,10 @@ function closePC(pc = peerConnection) {
   pc.removeEventListener("signalingstatechange", onSignalingStateChange, true);
   pc.removeEventListener("track", onTrack, true);
   clearInterval(statsIntervalId);
-  iceGatheringStatusLabel.innerText = "";
-  signalingStatusLabel.innerText = "";
-  iceStatusLabel.innerText = "";
-  peerStatusLabel.innerText = "";
+  iceGatheringStatusLabel.innerText = "Not Connected";
+  signalingStatusLabel.innerText = "Not Connected";
+  iceStatusLabel.innerText = "Not Connected";
+  peerStatusLabel.innerText = "Not Connected";
   console.log("stopped peer connection");
   if (pc === peerConnection) {
     peerConnection = null;
