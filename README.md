@@ -71,7 +71,6 @@ The **Urban Health Assistant** is a web application that integrates D-ID with La
 
    ```env
    OPENAI_API_KEY=your_openai_api_key
-   D_ID_API_KEY=your_d_id_api_key
    ```
 
 4. **Start the server**:
