@@ -42,7 +42,7 @@ connectButton.onclick = async () => {
     },
     body: JSON.stringify({
       source_url:
-        "https://raw.githubusercontent.com/Arghadeep-hub/blob-strorage/refs/heads/main/me_back.jpeg",
+        "https://raw.githubusercontent.com/Arghadeep-hub/blob-strorage/refs/heads/main/kritika.png",
     }),
   });
 
@@ -106,10 +106,7 @@ async function handleDIDStreaming(chatResponse) {
           script: {
             type: "text",
             subtitles: "false",
-            provider: {
-              type: "microsoft",
-              voice_id: "en-US-ChristopherNeural",
-            },
+            provider: { type: "microsoft", voice_id: "en-IN-NeerjaNeural" },
             ssml: false,
             input: chatResponse, // Send the chatResponse to D-ID
           },
