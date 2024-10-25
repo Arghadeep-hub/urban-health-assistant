@@ -1,5 +1,6 @@
 /node_modules
 .deployment
+.env
 /.vscode
 Dockerfile
 .dockerignore
