@@ -162,7 +162,7 @@ video {
   padding: 10px;
   border-radius: 5px;
   overflow: auto;
-  font-size: 16px;
+  font-size: 22px;
   margin: 0 auto;
   /* Adjust font size as needed */
 }
@@ -170,11 +170,13 @@ video {
 #input-container .input-box {
   padding: 1rem;
   font-size: 2rem;
+  text-align: center;
 }
 
 #status {
   text-align: center;
   width: 100%;
+  font-size: 22px;
 }
 
 @media screen and (max-width: 500px) {

@@ -42,7 +42,7 @@ connectButton.onclick = async () => {
     },
     body: JSON.stringify({
       source_url:
-        "https://raw.githubusercontent.com/Arghadeep-hub/blob-strorage/refs/heads/main/sourav.png",
+        "https://raw.githubusercontent.com/Arghadeep-hub/blob-strorage/refs/heads/main/me_back.jpeg",
     }),
   });
 
@@ -322,7 +322,7 @@ function setVideoElement(stream) {
 
 function playIdleVideo() {
   talkVideo.srcObject = undefined;
-  talkVideo.src = "../img/avtarVid.mp4";
+  talkVideo.src = "../img/avtarVid.webm";
   talkVideo.loop = true;
 }
 
