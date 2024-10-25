@@ -1,0 +1,9 @@
+/node_modules
+.deployment
+/.vscode
+Dockerfile
+.dockerignore
+docker-compose.yml
+logsErrors.log
+logsInternalErrors.log
+logsWarnings.log

@@ -1,0 +1,22 @@
+{
+  "name": "d-id_langchain_openai",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "fs": "^0.0.1-security",
+    "hnswlib-node": "^1.4.2",
+    "langchain": "^0.0.184",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.7",
+    "openai": "4.67.3",
+    "pdf-parse": "^1.1.1"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  }
+}

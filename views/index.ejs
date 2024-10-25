@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>D-ID Streaming POC</title>
+    <!-- added google fonts -->
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <script type="module" src="/js/langindex.js"></script>
+    <script type="module" src="/js/streaming-client-api.js"></script>
+</head>
+
+<body>
+    <section id="content">
+        <div id="video-wrapper">
+            <div class="video-container">
+                <video id="talk-video" width="360" height="360" autoplay></video>
+            </div>
+        </div>
+        <br />
+
+        <div id="input-container" style="text-align: left;">
+            <input type="text" id="user-input-field"
+                placeholder="I am a helpful assistant... may I answer a question for you?" style="font-size: 20px;">
+
+            <div style="display: flex; justify-content: center; margin: 3rem auto;">
+                <input type="checkbox" id="toggleDID" style="width: 20px; height: 20px;" />
+                <label for="toggleDID" style="padding-left: 0.5rem; font-size: 16px; font-weight: 600;">Link with
+                    D-ID</label>
+            </div>
+        </div>
+
+        <!-- added div#buttons -->
+        <div id="buttons">
+            <!-- index.html -->
+            <button id="connect-button" type="button">Connect</button>
+            <button id="voice-typing-button" type="button">Voice Typing</button>
+            <button id="talk-button" type="button">Let's Chat</button>
+            <button id="destroy-button" type="button">End Chat</button>
+        </div>
+
+        <!-- ... other HTML ... -->
+        <div id="response-container">Server response will appear here for reference</div>
+        <!-- ... other HTML ... -->
+
+        <!-- added div#status -->
+        <div id="status">
+            ICE gathering status: <span id="ice-gathering-status-label">Not connected</span><br />
+            ICE status: <span id="ice-status-label">Not connected</span><br />
+            Peer connection status: <span id="peer-status-label">Not connected</span><br />
+            Signaling status: <span id="signaling-status-label">Not connected</span><br />
+            Streaming status: <span id="streaming-status-label">Not connected</span><br />
+        </div>
+    </section>
+
+    <script>
+        if ('webkitSpeechRecognition' in window) {
+            var recognition = new webkitSpeechRecognition();
+            recognition.continuous = false; // Set this to true if you want the recognition to continue even after it detects a pause in speaking
+            recognition.interimResults = true; // Show interim results
+            recognition.lang = 'en-US'; // Set the language of the recognition
+
+            // What to do when speech is detected
+            recognition.onresult = function (event) {
+                var final_transcript = '';
+                for (var i = event.resultIndex; i < event.results.length; ++i) {
+                    if (event.results[i].isFinal) {
+                        final_transcript += event.results[i][0].transcript;
+                    }
+                }
+                // Update the text field with the result
+                document.getElementById('user-input-field').value = final_transcript;
+            };
+
+            // Start the speech recognition when the button is clicked
+            document.getElementById('voice-typing-button').addEventListener('click', function () {
+                recognition.start();
+            });
+        } else {
+            alert("Web Speech API is not supported in this browser.");
+        }
+    </script>
+</body>
+
+</html>
