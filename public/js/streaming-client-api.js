@@ -126,7 +126,7 @@ async function handleDIDStreaming(chatResponse) {
             normalization_factor: 0,
             sharpen: true,
             stitch: true,
-            result_format: "mp4",
+            result_format: "webm",
           },
           driver_url: "bank://lively/",
           config: {
